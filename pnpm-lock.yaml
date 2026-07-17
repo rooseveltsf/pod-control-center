@@ -217,6 +217,24 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2
 
+  apps/api: {}
+
+  apps/desktop: {}
+
+  packages/config: {}
+
+  packages/shared: {}
+
+  packages/types: {}
+
+  packages/ui: {}
+
+  services/automation: {}
+
+  services/obs: {}
+
+  services/youtube: {}
+
 packages:
 
   '@turbo/darwin-64@2.10.5':
