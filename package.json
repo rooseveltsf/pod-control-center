@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "turbo dev",
+    "desktop": "pnpm run dev --filter @pod-control-center/desktop",
     "build": "turbo build",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck"

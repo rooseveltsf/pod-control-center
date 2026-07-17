@@ -1,5 +1,6 @@
 node_modules
 .pnpm-store
+apps/desktop/out
 .env
 .env.local
 .env.development.local
