@@ -15,10 +15,17 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.1.1",
     "electron": "^43.1.1",
     "electron-vite": "^5.0.0",
+    "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.1"
   }
 }
