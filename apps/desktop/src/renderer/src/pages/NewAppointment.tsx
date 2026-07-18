@@ -13,7 +13,7 @@ export default function NewAppointmentPage() {
   }
 
   return (
-    <div className="min-h-screen overflow-hidden bg-[#090b13] px-5 py-6 text-slate-100 sm:px-8 lg:px-10">
+    <div className="page-transition min-h-screen overflow-hidden bg-[#090b13] px-5 py-6 text-slate-100 sm:px-8 lg:px-10">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_78%_8%,rgba(109,94,252,0.16),transparent_28rem),radial-gradient(circle_at_12%_75%,rgba(23,193,155,0.07),transparent_24rem)]" />
 
       <main className="relative mx-auto max-w-5xl">

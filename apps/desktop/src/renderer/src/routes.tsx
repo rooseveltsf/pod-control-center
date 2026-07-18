@@ -3,11 +3,13 @@ import { createHashRouter, type RouteObject } from "react-router-dom";
 
 export const paths = {
   home: "/",
+  myPods: "/meus-pods",
   newAppointment: "/novo-agendamento",
 } as const;
 
 export function createAppRouter(
   homePage: ReactNode,
+  myPodsPage: ReactNode,
   newAppointmentPage: ReactNode,
   notFoundPage: ReactNode,
 ) {
@@ -15,6 +17,10 @@ export function createAppRouter(
     {
       path: paths.home,
       element: homePage,
+    },
+    {
+      path: paths.myPods,
+      element: myPodsPage,
     },
     {
       path: paths.newAppointment,

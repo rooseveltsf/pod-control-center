@@ -1,4 +1,5 @@
 import HomePage from "./pages/Home";
+import MyPodsPage from "./pages/MyPods";
 import NewAppointmentPage from "./pages/NewAppointment";
 import NotFoundPage from "./pages/NotFound";
 import { createAppRouter } from "./routes";
@@ -10,6 +11,7 @@ import "./styles.css";
 
 const router = createAppRouter(
   <HomePage />,
+  <MyPodsPage />,
   <NewAppointmentPage />,
   <NotFoundPage />,
 );

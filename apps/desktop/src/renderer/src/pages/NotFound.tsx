@@ -3,7 +3,7 @@ import { paths } from "../routes";
 
 export default function NotFoundPage() {
   return (
-    <main className="grid min-h-screen place-items-center overflow-hidden bg-[#090b13] px-5 text-center text-slate-100">
+    <main className="page-transition grid min-h-screen place-items-center overflow-hidden bg-[#090b13] px-5 text-center text-slate-100">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_50%_32%,rgba(109,94,252,0.2),transparent_25rem)]" />
 
       <section className="relative max-w-md">

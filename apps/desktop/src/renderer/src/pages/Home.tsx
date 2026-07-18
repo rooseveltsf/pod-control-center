@@ -35,7 +35,7 @@ const statusStyle: Record<PodStatus, string> = {
 
 function HomePage() {
   return (
-    <div className="min-h-screen overflow-hidden bg-[#090b13] text-slate-100">
+    <div className="page-transition min-h-screen overflow-hidden bg-[#090b13] text-slate-100">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_78%_10%,rgba(109,94,252,0.16),transparent_28rem),radial-gradient(circle_at_12%_75%,rgba(23,193,155,0.07),transparent_24rem)]" />
       <div className="relative mx-auto flex min-h-screen max-w-[1440px]">
         <aside className="hidden w-64 flex-col border-r border-white/7 bg-white/[0.02] px-5 py-6 lg:flex">
@@ -57,26 +57,20 @@ function HomePage() {
             >
               ⌂ Visão geral
             </a>
-            <a
+            <Link
               className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-slate-400 transition hover:bg-white/5 hover:text-white"
-              href="#pods"
+              to={paths.myPods}
             >
               ◉ Meus pods{" "}
               <span className="ml-auto rounded-full bg-white/8 px-2 py-0.5 text-xs text-slate-300">
                 3
               </span>
-            </a>
+            </Link>
             <a
               className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-slate-400 transition hover:bg-white/5 hover:text-white"
               href="#agenda"
             >
               □ Agenda
-            </a>
-            <a
-              className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-slate-400 transition hover:bg-white/5 hover:text-white"
-              href="#midia"
-            >
-              ▷ Biblioteca
             </a>
           </nav>
           <div className="mt-auto rounded-2xl border border-white/8 bg-white/[0.03] p-4">
@@ -164,12 +158,12 @@ function HomePage() {
                   Acompanhe o status dos seus estúdios.
                 </p>
               </div>
-              <a
-                href="#todos"
+              <Link
+                to={paths.myPods}
                 className="text-sm font-semibold text-violet-300 hover:text-violet-200"
               >
                 Ver todos
-              </a>
+              </Link>
             </div>
             <div className="mt-4 grid gap-3 xl:grid-cols-3">
               {pods.map((pod) => (
@@ -225,6 +219,5 @@ function HomePage() {
     </div>
   );
 }
-
 
 export default HomePage;
