@@ -1,6 +1,7 @@
 import HomePage from "./pages/Home";
 import MyPodsPage from "./pages/MyPods";
 import NewAppointmentPage from "./pages/NewAppointment";
+import PlannerPage from "./pages/Planner";
 import NotFoundPage from "./pages/NotFound";
 import { createAppRouter } from "./routes";
 import { createRoot } from "react-dom/client";
@@ -14,6 +15,7 @@ const router = createAppRouter(
   <MyPodsPage />,
   <NewAppointmentPage />,
   <NotFoundPage />,
+  <PlannerPage />
 );
 
 createRoot(document.getElementById("root")!).render(

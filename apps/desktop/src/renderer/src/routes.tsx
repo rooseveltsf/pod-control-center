@@ -5,6 +5,7 @@ export const paths = {
   home: "/",
   myPods: "/meus-pods",
   newAppointment: "/novo-agendamento",
+  planner: "/planner",
 } as const;
 
 export function createAppRouter(
@@ -12,6 +13,7 @@ export function createAppRouter(
   myPodsPage: ReactNode,
   newAppointmentPage: ReactNode,
   notFoundPage: ReactNode,
+  plannerPage: ReactNode,
 ) {
   const routes: RouteObject[] = [
     {
@@ -25,6 +27,10 @@ export function createAppRouter(
     {
       path: paths.newAppointment,
       element: newAppointmentPage,
+    },
+    {
+      path: paths.planner,
+      element: plannerPage,
     },
     {
       path: "*",

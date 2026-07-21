@@ -8,25 +8,25 @@ const pods: {
   detail: string;
   accent: string;
 }[] = [
-  {
-    name: "Pod 01",
-    status: "Ao vivo",
-    detail: "Há 42 min",
-    accent: "bg-emerald-400",
-  },
-  {
-    name: "Pod 02",
-    status: "Em preparação",
-    detail: "Cena: Entrevista",
-    accent: "bg-amber-300",
-  },
-  {
-    name: "Pod 03",
-    status: "Offline",
-    detail: "Última atividade 09:17",
-    accent: "bg-slate-500",
-  },
-];
+    {
+      name: "Pod 01",
+      status: "Ao vivo",
+      detail: "Há 42 min",
+      accent: "bg-emerald-400",
+    },
+    {
+      name: "Pod 02",
+      status: "Em preparação",
+      detail: "Cena: Entrevista",
+      accent: "bg-amber-300",
+    },
+    {
+      name: "Pod 03",
+      status: "Offline",
+      detail: "Última atividade 09:17",
+      accent: "bg-slate-500",
+    },
+  ];
 const statusStyle: Record<PodStatus, string> = {
   "Ao vivo": "bg-emerald-400/10 text-emerald-300 ring-emerald-400/20",
   "Em preparação": "bg-amber-300/10 text-amber-200 ring-amber-300/20",
@@ -66,12 +66,12 @@ function HomePage() {
                 3
               </span>
             </Link>
-            <a
+            <Link
+              to={paths.planner}
               className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-slate-400 transition hover:bg-white/5 hover:text-white"
-              href="#agenda"
             >
               □ Agenda
-            </a>
+            </Link>
           </nav>
           <div className="mt-auto rounded-2xl border border-white/8 bg-white/[0.03] p-4">
             <p className="text-xs font-semibold text-slate-200">
