@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { paths } from "../routes";
+import SideBar from "../../components/SideBar";
 
 type PodStatus = "Ao vivo" | "Em preparação" | "Offline";
 const pods: {
@@ -8,25 +9,25 @@ const pods: {
   detail: string;
   accent: string;
 }[] = [
-    {
-      name: "Pod 01",
-      status: "Ao vivo",
-      detail: "Há 42 min",
-      accent: "bg-emerald-400",
-    },
-    {
-      name: "Pod 02",
-      status: "Em preparação",
-      detail: "Cena: Entrevista",
-      accent: "bg-amber-300",
-    },
-    {
-      name: "Pod 03",
-      status: "Offline",
-      detail: "Última atividade 09:17",
-      accent: "bg-slate-500",
-    },
-  ];
+  {
+    name: "Pod 01",
+    status: "Ao vivo",
+    detail: "Há 42 min",
+    accent: "bg-emerald-400",
+  },
+  {
+    name: "Pod 02",
+    status: "Em preparação",
+    detail: "Cena: Entrevista",
+    accent: "bg-amber-300",
+  },
+  {
+    name: "Pod 03",
+    status: "Offline",
+    detail: "Última atividade 09:17",
+    accent: "bg-slate-500",
+  },
+];
 const statusStyle: Record<PodStatus, string> = {
   "Ao vivo": "bg-emerald-400/10 text-emerald-300 ring-emerald-400/20",
   "Em preparação": "bg-amber-300/10 text-amber-200 ring-amber-300/20",
@@ -38,53 +39,7 @@ function HomePage() {
     <div className="page-transition min-h-screen overflow-hidden bg-[#090b13] text-slate-100">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_78%_10%,rgba(109,94,252,0.16),transparent_28rem),radial-gradient(circle_at_12%_75%,rgba(23,193,155,0.07),transparent_24rem)]" />
       <div className="relative mx-auto flex min-h-screen max-w-[1440px]">
-        <aside className="hidden w-64 flex-col border-r border-white/7 bg-white/[0.02] px-5 py-6 lg:flex">
-          <div className="mb-12 flex items-center gap-3 px-2">
-            <div className="grid h-9 w-9 place-items-center rounded-xl bg-violet-500 text-lg font-black shadow-lg shadow-violet-950/50">
-              P
-            </div>
-            <div>
-              <p className="text-sm font-bold tracking-tight">Pod Control</p>
-              <p className="text-[10px] uppercase tracking-[.18em] text-slate-500">
-                Control center
-              </p>
-            </div>
-          </div>
-          <nav className="space-y-1 text-sm">
-            <a
-              className="flex items-center gap-3 rounded-xl bg-violet-500/15 px-3 py-2.5 font-medium text-violet-200"
-              href="#inicio"
-            >
-              ⌂ Visão geral
-            </a>
-            <Link
-              className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-slate-400 transition hover:bg-white/5 hover:text-white"
-              to={paths.myPods}
-            >
-              ◉ Meus pods{" "}
-              <span className="ml-auto rounded-full bg-white/8 px-2 py-0.5 text-xs text-slate-300">
-                3
-              </span>
-            </Link>
-            <Link
-              to={paths.planner}
-              className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-slate-400 transition hover:bg-white/5 hover:text-white"
-            >
-              □ Agenda
-            </Link>
-          </nav>
-          <div className="mt-auto rounded-2xl border border-white/8 bg-white/[0.03] p-4">
-            <p className="text-xs font-semibold text-slate-200">
-              Precisa de ajuda?
-            </p>
-            <p className="mt-1 text-xs leading-5 text-slate-500">
-              Acesse o guia rápido para configurar seu estúdio.
-            </p>
-            <button className="mt-3 text-xs font-semibold text-violet-300">
-              Ver guia →
-            </button>
-          </div>
-        </aside>
+        <SideBar />
         <main
           id="inicio"
           className="flex min-w-0 flex-1 flex-col px-5 py-5 sm:px-8 sm:py-7 lg:px-10"
