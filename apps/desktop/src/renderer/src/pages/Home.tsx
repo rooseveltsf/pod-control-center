@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { paths } from "../routes";
 import SideBar from "../../components/SideBar";
+import Header from "../../components/Header";
 
 type PodStatus = "Ao vivo" | "Em preparação" | "Offline";
 const pods: {
@@ -9,25 +10,25 @@ const pods: {
   detail: string;
   accent: string;
 }[] = [
-  {
-    name: "Pod 01",
-    status: "Ao vivo",
-    detail: "Há 42 min",
-    accent: "bg-emerald-400",
-  },
-  {
-    name: "Pod 02",
-    status: "Em preparação",
-    detail: "Cena: Entrevista",
-    accent: "bg-amber-300",
-  },
-  {
-    name: "Pod 03",
-    status: "Offline",
-    detail: "Última atividade 09:17",
-    accent: "bg-slate-500",
-  },
-];
+    {
+      name: "Pod 01",
+      status: "Ao vivo",
+      detail: "Há 42 min",
+      accent: "bg-emerald-400",
+    },
+    {
+      name: "Pod 02",
+      status: "Em preparação",
+      detail: "Cena: Entrevista",
+      accent: "bg-amber-300",
+    },
+    {
+      name: "Pod 03",
+      status: "Offline",
+      detail: "Última atividade 09:17",
+      accent: "bg-slate-500",
+    },
+  ];
 const statusStyle: Record<PodStatus, string> = {
   "Ao vivo": "bg-emerald-400/10 text-emerald-300 ring-emerald-400/20",
   "Em preparação": "bg-amber-300/10 text-amber-200 ring-amber-300/20",
@@ -38,34 +39,13 @@ function HomePage() {
   return (
     <div className="page-transition min-h-screen overflow-hidden bg-[#090b13] text-slate-100">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_78%_10%,rgba(109,94,252,0.16),transparent_28rem),radial-gradient(circle_at_12%_75%,rgba(23,193,155,0.07),transparent_24rem)]" />
-      <div className="relative mx-auto flex min-h-screen max-w-[1440px]">
+      <div className="relative flex min-h-screen w-full">
         <SideBar />
         <main
           id="inicio"
-          className="flex min-w-0 flex-1 flex-col px-5 py-5 sm:px-8 sm:py-7 lg:px-10"
+          className="flex min-w-0 flex-1 flex-col px-5 py-5 sm:px-8 sm:py-7 lg:ml-64 lg:px-10"
         >
-          <header className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-2 lg:hidden">
-              <div className="grid h-8 w-8 place-items-center rounded-lg bg-violet-500 font-black">
-                P
-              </div>
-              <span className="text-sm font-bold">Pod Control</span>
-            </div>
-            <p className="hidden text-sm text-slate-500 lg:block">
-              Sábado, 18 de julho
-            </p>
-            <div className="ml-auto flex items-center gap-3">
-              <button
-                aria-label="Notificações"
-                className="grid h-10 w-10 place-items-center rounded-xl border border-white/8 bg-white/[0.03] text-slate-300 transition hover:bg-white/8"
-              >
-                ♧
-              </button>
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-fuchsia-400 to-violet-500 text-sm font-bold">
-                RS
-              </div>
-            </div>
-          </header>
+          <Header />
           <section className="mt-12 sm:mt-16">
             <p className="text-sm font-medium text-violet-300">
               Bom dia, Roose

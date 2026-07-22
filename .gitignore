@@ -1,6 +1,9 @@
 node_modules
 .pnpm-store
+.turbo
+apps/desktop/.turbo
 apps/desktop/out
+packages/types/dist
 .env
 .env.local
 .env.development.local
