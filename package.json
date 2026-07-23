@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "turbo dev",
     "desktop": "pnpm run dev --filter @pod-control-center/desktop",
+    "api": "pnpm run dev --filter @pod-control-center/api",
     "build": "turbo build",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck"

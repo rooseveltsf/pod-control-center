@@ -41,8 +41,8 @@ const statusStyles: Record<EpisodeStatus, string> = {
 
 export default function MyPodsPage() {
   return (
-    <div className="page-transition min-h-screen overflow-hidden bg-[#090b13] px-5 py-6 text-slate-100 sm:px-8 lg:px-10">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_78%_8%,rgba(109,94,252,0.16),transparent_28rem),radial-gradient(circle_at_12%_75%,rgba(23,193,155,0.07),transparent_24rem)]" />
+    <div className="app-page page-transition min-h-screen overflow-hidden bg-[#1b2055] px-5 py-6 text-slate-100 sm:px-8 lg:px-10">
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_78%_8%,rgba(143,163,240,0.18),transparent_28rem),radial-gradient(circle_at_12%_75%,rgba(83,105,201,0.12),transparent_24rem)]" />
 
       <main className="relative mx-auto max-w-5xl">
         <header className="flex items-center justify-between border-b border-white/8 pb-6">
@@ -79,7 +79,7 @@ export default function MyPodsPage() {
 
         <section className="mt-9 rounded-2xl border border-white/8 bg-white/[0.035] p-3 sm:p-4">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/8 px-1 pb-4">
-            <div className="flex gap-1 rounded-xl bg-[#0d101b] p-1 text-sm">
+            <div className="flex gap-1 rounded-xl bg-[#202766] p-1 text-sm">
               <button className="rounded-lg bg-violet-500/20 px-3 py-2 font-medium text-violet-200">
                 Todos <span className="ml-1 text-violet-300">3</span>
               </button>
@@ -93,7 +93,7 @@ export default function MyPodsPage() {
             <input
               aria-label="Buscar episódios"
               placeholder="Buscar episódio"
-              className="w-full rounded-xl border border-white/10 bg-[#0d101b] px-3 py-2 text-sm text-white outline-none placeholder:text-slate-600 focus:border-violet-400 sm:w-48"
+              className="w-full rounded-xl border border-white/10 bg-[#202766] px-3 py-2 text-sm text-white outline-none placeholder:text-slate-500 focus:border-violet-400 sm:w-48"
             />
           </div>
 

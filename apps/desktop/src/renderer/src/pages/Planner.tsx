@@ -1,11 +1,17 @@
 import CardPlanner from "../../components/CardPlanner";
 import Header from "../../components/Header";
 import SideBar from "../../components/SideBar";
+import { useEffect, useState } from "react";
+import type { Appointment } from "@pod-control-center/types";
+import { api } from "../api";
 
 function PlannerPage() {
+    const [appointments, setAppointments] = useState<Appointment[]>([]);
+    const [error, setError] = useState("");
+    useEffect(() => { api.listAppointments().then(setAppointments).catch((reason: unknown) => setError(reason instanceof Error ? reason.message : "Não foi possível carregar a agenda.")); }, []);
     return (
-        <div className="page-transition min-h-screen overflow-hidden bg-[#090b13] text-slate-100">
-            <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_78%_10%,rgba(109,94,252,0.16),transparent_28rem),radial-gradient(circle_at_12%_75%,rgba(23,193,155,0.07),transparent_24rem)]" />
+        <div className="app-page page-transition min-h-screen overflow-hidden bg-[#1b2055] text-slate-100">
+            <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_78%_10%,rgba(143,163,240,0.18),transparent_28rem),radial-gradient(circle_at_12%_75%,rgba(83,105,201,0.12),transparent_24rem)]" />
             <div className="relative flex min-h-screen">
                 <SideBar />
                 <main
@@ -23,13 +29,10 @@ function PlannerPage() {
                     </section>
 
                     <section className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                        <CardPlanner />
-                        <CardPlanner />
-                        <CardPlanner />
-                        <CardPlanner />
-                        <CardPlanner />
-                        <CardPlanner />
+                        {appointments.map((appointment) => <CardPlanner key={appointment.id} appointment={appointment} />)}
                     </section>
+                    {error && <p className="mt-6 text-sm text-rose-300">API local indisponível: {error}</p>}
+                    {!error && appointments.length === 0 && <p className="mt-6 text-sm text-slate-400">Nenhum agendamento encontrado.</p>}
                 </main>
             </div>
         </div>

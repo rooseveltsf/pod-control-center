@@ -4,6 +4,9 @@ node_modules
 apps/desktop/.turbo
 apps/desktop/out
 packages/types/dist
+apps/api/dist
+data/*.local.json
+apps/api/data/*.local.json
 .env
 .env.local
 .env.development.local

@@ -1,23 +1,25 @@
-function CardPlanner() {
+import type { Appointment } from "@pod-control-center/types";
+
+function CardPlanner({ appointment }: { appointment: Appointment }) {
     return (
         <article className="flex min-h-72 w-full flex-col rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5 transition-all hover:border-violet-500/40 hover:bg-zinc-900">
             <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0">
                     <span className="rounded-full bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-400">
-                        Hoje
+                        {new Date(appointment.startsAt).toLocaleDateString("pt-BR")}
                     </span>
 
                     <h3 className="mt-3 text-lg font-semibold text-white">
-                        Podcast com João Silva
+                        {appointment.title}
                     </h3>
 
                     <p className="mt-1 text-sm text-zinc-400">
-                        Planejamento da live semanal sobre tecnologia.
+                        {appointment.notes ?? "Sem observações."}
                     </p>
                 </div>
 
                 <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400">
-                    Confirmado
+                    {appointment.status}
                 </span>
             </div>
 
@@ -25,21 +27,21 @@ function CardPlanner() {
                 <div>
                     <p className="text-xs text-zinc-500">Horário</p>
                     <p className="mt-1 text-sm font-medium text-white">
-                        20:00 - 22:00
+                        {new Date(appointment.startsAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })} - {new Date(appointment.endsAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })}
                     </p>
                 </div>
 
                 <div>
                     <p className="text-xs text-zinc-500">Convidados</p>
                     <p className="mt-1 text-sm font-medium text-white">
-                        2 Pessoas
+                        {appointment.participantCount} pessoas
                     </p>
                 </div>
 
                 <div>
                     <p className="text-xs text-zinc-500">Plataforma</p>
                     <p className="mt-1 text-sm font-medium text-white">
-                        YouTube
+                        Pod {appointment.podId}
                     </p>
                 </div>
             </div>

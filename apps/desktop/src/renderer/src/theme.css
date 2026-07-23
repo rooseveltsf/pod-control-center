@@ -1,0 +1,22 @@
+@theme {
+  --color-violet-200: #e5e9ff;
+  --color-violet-300: #c5cdf8;
+  --color-violet-400: #97a8f0;
+  --color-violet-500: #6f86e7;
+  --color-violet-600: #5268c8;
+  --color-violet-950: #1a1f4c;
+  --color-fuchsia-400: #aebbf3;
+}
+
+:root {
+  --app-canvas: #151834;
+  --app-surface: #202651;
+  --app-surface-raised: #272e5d;
+  --app-sidebar: #1a1f49;
+  --app-ink: #f7f8ff;
+  --app-ink-muted: #adb7d8;
+  --app-brand: #6f86e7;
+  --app-brand-hover: #879bef;
+  --app-border: #343d71;
+  --app-shadow: 0 8px 22px rgb(5 7 24 / 0.16);
+}

@@ -5,7 +5,7 @@
   "main": "./out/main/index.js",
   "private": true,
   "scripts": {
-    "dev": "electron-vite dev",
+    "dev": "set \"ELECTRON_RUN_AS_NODE=\" && electron-vite dev",
     "build": "electron-vite build",
     "preview": "electron-vite preview",
     "typecheck": "tsc --noEmit"
@@ -26,6 +26,7 @@
     "vite": "^7.0.0"
   },
   "dependencies": {
+    "@pod-control-center/types": "workspace:*",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.18.1"

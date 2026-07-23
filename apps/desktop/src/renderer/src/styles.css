@@ -1,53 +1,35 @@
 @import "tailwindcss";
+@import "./theme.css";
 
-:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #f5f7ff; background: #090b13; font-synthesis: none; }
+:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: var(--app-ink); background: var(--app-canvas); font-synthesis: none; }
 * { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; min-height: 100vh; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--app-canvas); }
 #root { min-height: 100vh; }
 button { font: inherit; }
 
+.page-transition, .app-page { background: var(--app-canvas) !important; color: var(--app-ink); }
+.page-transition > .pointer-events-none, .app-page > .pointer-events-none { display: none; }
+.page-transition .text-slate-500, .page-transition .text-slate-400, .page-transition .text-zinc-500, .page-transition .text-zinc-400 { color: var(--app-ink-muted) !important; }
+.page-transition .border-white\/8, .page-transition .border-white\/10, .page-transition .border-zinc-800, .page-transition .border-zinc-700 { border-color: var(--app-border) !important; }
+.page-transition .bg-white\/\[0\.035\], .page-transition .bg-white\/\[0\.025\], .page-transition .bg-white\/\[0\.03\], .page-transition .bg-zinc-900\/60 { background-color: var(--app-surface) !important; }
+.page-transition article, .page-transition form, .page-transition section.rounded-2xl { box-shadow: var(--app-shadow); }
+.page-transition input, .page-transition select, .page-transition textarea, .page-transition .bg-\[\#202766\] { background: #191e45 !important; border-color: var(--app-border) !important; }
+.page-transition .hover\:bg-zinc-900:hover, .page-transition .hover\:bg-zinc-800:hover { background-color: var(--app-surface-raised) !important; }
+
+.page-transition aside.app-sidebar { background: var(--app-sidebar) !important; border-color: rgb(255 255 255 / 0.10) !important; color: var(--app-ink); }
+.page-transition .app-sidebar .text-slate-400, .page-transition .app-sidebar .text-slate-500 { color: #aeb9e4 !important; }
+.page-transition .app-sidebar .text-violet-200, .page-transition .app-sidebar .text-violet-300 { color: #eef0ff !important; }
+.page-transition .app-sidebar .border-white\/8 { border-color: rgb(255 255 255 / 0.12) !important; }
+.page-transition .app-sidebar .bg-white\/\[0\.02\], .page-transition .app-sidebar .bg-white\/\[0\.03\] { background-color: rgb(255 255 255 / 0.06) !important; }
+
 @keyframes page-enter {
-  from {
-    opacity: 0;
-    transform: translateY(10px) scale(0.992);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+.page-transition { animation: page-enter 240ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+@media (prefers-reduced-motion: reduce) { .page-transition { animation: none; } }
 
-.page-transition {
-  animation: page-enter 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .page-transition { animation: none; }
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #09090b;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    rgb(139 92 246),
-    rgb(109 40 217)
-  );
-  border-radius: 9999px;
-  border: 2px solid #09090b;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    180deg,
-    rgb(167 139 250),
-    rgb(124 58 237)
-  );
-}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--app-canvas); }
+::-webkit-scrollbar-thumb { background: #5268c8; border: 2px solid var(--app-canvas); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--app-brand); }
