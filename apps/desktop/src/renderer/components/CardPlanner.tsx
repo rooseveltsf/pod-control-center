@@ -47,11 +47,11 @@ function CardPlanner({ appointment }: { appointment: Appointment }) {
             </div>
 
             <div className="mt-auto flex flex-wrap items-center justify-end gap-3 pt-6">
-                <button className="rounded-lg border border-zinc-700 px-4 py-2 text-sm text-zinc-300 transition hover:border-zinc-600 hover:bg-zinc-800">
+                <button className="rounded-lg border border-zinc-700 px-4 py-2 text-sm text-zinc-300 transition hover:border-zinc-600 hover:bg-zinc-800 cursor-pointer">
                     Editar
                 </button>
 
-                <button className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-violet-500">
+                <button className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-violet-500 cursor-pointer">
                     Abrir
                 </button>
             </div>
